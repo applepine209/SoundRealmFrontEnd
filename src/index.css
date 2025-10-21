@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overscroll-behavior: none;
+
+  background-color: #120300; 
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'Geometos';
+  src: url('./assets/fonts/Geometos.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bender';
+  src: url('./assets/fonts/BenderRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bender';
+  src: url('./assets/fonts/BenderBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bender';
+  src: url('./assets/fonts/BenderRegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Bender';
+  src: url('./assets/fonts/BenderBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SFMono';
+  src: url('./assets/fonts/SFMonoRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SFMono';
+  src: url('./assets/fonts/SFMonoBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SFMono';
+  src: url('./assets/fonts/SFMonoRegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SFMono';
+  src: url('./assets/fonts/SFMonoBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Automate';
+  src: url('./assets/fonts/AutomateRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-geometos: "Geometos", sans-serif;
+  --font-bender: "Bender", sans-serif;
+  --font-sfmono: "SFMono", ui-monospace;
+  --font-automate: "Automate", sans-serif;
+  --breakpoint-3xl: 121rem;
+}
