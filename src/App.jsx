@@ -38,7 +38,6 @@ const router = createBrowserRouter([
 ]);
 
 function RootLayout() {
-  const location = useLocation();
   const outletElement = useOutlet();
 
   return (
