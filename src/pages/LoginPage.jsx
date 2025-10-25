@@ -139,7 +139,7 @@ function LoginPage() {
             <motion.div
               variants={formVariants}
             >
-              <AdaptiveContainer rootClassName='bg-[#00000080] rounded-3xl mt-10' selectedChildren={currentLayout}>
+              <AdaptiveContainer rootClassName='bg-[#2d2d2d80] backdrop-blur-2xl rounded-3xl mt-10' selectedChildren={currentLayout}>
                 {/* Layout 0: Loading screen */}
                 <div className='h-13 w-60 3xl:w-70 3xl:h-15 flex items-center justify-center'>
                   <div className='flex flex-row items-center justify-center'>
@@ -165,7 +165,7 @@ function LoginPage() {
                   <input
                     type='text'
                     placeholder='_'
-                    className='bg-[#0000006f] rounded-2xl px-3 h-9 3xl:h-11 w-full text-[#a5a5a5] 3xl:text-[24px]'
+                    className='bg-[#0808086f] rounded-2xl px-3 h-9 3xl:h-11 w-full text-[#a5a5a5] 3xl:text-[24px]'
                     value={usernameInput}
                     onChange={(e) => setUsernameInput(e.target.value)}
                   />
@@ -173,7 +173,7 @@ function LoginPage() {
                   <input
                     type='password'
                     placeholder='_'
-                    className='bg-[#0000006f] w-full rounded-2xl px-3 h-9 3xl:h-11 text-[#a5a5a5] 3xl:text-[24px]'
+                    className='bg-[#0808086f] w-full rounded-2xl px-3 h-9 3xl:h-11 text-[#a5a5a5] 3xl:text-[24px]'
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
                   />

@@ -3,6 +3,7 @@ import AdaptiveContainer from "../shared/AdaptiveContainer";
 import { AnimatePresence, motion } from 'motion/react';
 import { useNavigate } from "react-router-dom";
 import authAPI from "../../apis/authAPI";
+import toast from "react-hot-toast";
 
 const loadingScreenVariant = {
   initial: { opacity: 0 },
@@ -19,6 +20,7 @@ function RouteProtector({ children }) {
     try {
       const response = await authAPI.fetchGETVerifySession();
       if (response.result === "Bx000") {
+        toast.success("Session verified successfully!");
         setIsLoading(false);
         return;
       } else {
@@ -48,7 +50,7 @@ function RouteProtector({ children }) {
             animate="animate"
             exit="exit"
             key="loading">
-            <AdaptiveContainer rootClassName='bg-[#00000080] rounded-3xl pb-3' selectedChildren={0}>
+            <AdaptiveContainer rootClassName='bg-[#2d2d2d80] backdrop-blur-2xl rounded-3xl pb-3' selectedChildren={0}>
               <div className='w-80 3xl:w-100 flex flex-col items-center justify-center'>
                 <div className="flex flex-row items-center justify-center w-full mt-2">
                   <img className='h-15 w-15' src='/logo.png' alt='Loading...' />
