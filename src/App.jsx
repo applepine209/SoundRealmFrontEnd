@@ -3,7 +3,7 @@
 // Dark: #120300
 
 // Modules imports
-import { createBrowserRouter, RouterProvider, Navigate, useOutlet, useLocation } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate, useOutlet, useLocation, useMatches } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import React from "react";
 
@@ -39,11 +39,14 @@ const router = createBrowserRouter([
 
 function RootLayout() {
   const outletElement = useOutlet();
+  const matches = useMatches();
+  const topLevel = matches[1];
+  const key = topLevel?.route?.id ?? topLevel?.pathname ?? "/";
 
   return (
     <div className="h-screen w-screen min-w-[375px] overflow-x-auto">
-      <AnimatePresence mode="wait" initial={false}>
-        {outletElement && React.cloneElement(outletElement, { key: location.pathname })}
+      <AnimatePresence mode="wait">
+        {outletElement && React.cloneElement(outletElement, { key })}
       </AnimatePresence>
     </div>
   );

@@ -94,7 +94,6 @@ function LoginPage() {
     try {
       // Verify if session is valid
       const response = await authAPI.fetchGETVerifySession();
-      console.log(response.result);
       if (response.result == 'Bx000') {
         navigate('/');
         return;
@@ -105,7 +104,6 @@ function LoginPage() {
     try {
       // Try log in with remember me
       const response = await authAPI.fetchGETRememberMe();
-      console.log(response.result);
       if (response.result == '14x000') {
         navigate('/');
         return;
@@ -124,6 +122,7 @@ function LoginPage() {
       initial="initial"
       animate="animate"
       exit="exit"
+      key="login-page"
     >
       <div className='w-full flex flex-col items-center'>
         <LayoutGroup>

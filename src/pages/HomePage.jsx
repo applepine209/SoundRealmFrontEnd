@@ -1,15 +1,15 @@
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import DesktopLayout from "../components/HomePage/DesktopLayout/_component";
 import MobileLayout from "../components/HomePage/MobileLayout/_component";
-import PreloadWrapper from "../components/HomePage/PreloadWrapper";
+import RouteProtector from "../components/HomePage/RouteProtector";
 
 function HomePage() {
-    const isMobile = useMediaQuery("(max-width: 376px)");
+    const isMobile = useMediaQuery("(max-width: 430px)");
 
     return (
-        <PreloadWrapper>
+        <RouteProtector>
             {isMobile ? <MobileLayout /> : <DesktopLayout />}
-        </PreloadWrapper>
+        </RouteProtector>
     );
 }
 
