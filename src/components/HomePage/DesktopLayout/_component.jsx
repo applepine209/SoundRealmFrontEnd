@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom";
 import PlayerBar from "./PlayerBar";
+import SideBar from "./SideBar";
+import SongQueue from "./SongQueue";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -21,15 +23,21 @@ function DesktopLayout() {
   }
 
   let sideBarVariants = {
-    initial: { y: 48, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-    exit: { y: 48, opacity: 0, transition: { duration: 0.5 } },
+    initial: { x: -48, opacity: 0 },
+    animate: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+    exit: { x: -48, opacity: 0, transition: { duration: 0.5 } },
   }
 
   let outletContainerVariants = {
     initial: { y: 48, opacity: 0 },
     animate: { y: 0, opacity: 1, transition: { duration: 0.5 } },
     exit: { y: 48, opacity: 0, transition: { duration: 0.5 } },
+  }
+
+  let songQueueVariants = {
+    initial: { x: 48, opacity: 0 },
+    animate: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+    exit: { x: 48, opacity: 0, transition: { duration: 0.5 } },
   }
 
   return (
@@ -41,7 +49,7 @@ function DesktopLayout() {
       className="w-full h-full flex flex-col p-2 text-[#a5a5a5] overflow-hidden"
       key="home-desktop-layout"
     >
-      <motion.div variants={playerBarVariants} className='w-full h-20 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl'>
+      <motion.div variants={playerBarVariants} className='p-2 w-full h-20 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl'>
         <PlayerBar />
       </motion.div>
 
@@ -50,14 +58,18 @@ function DesktopLayout() {
           variants={sideBarVariants}
           className="h-full w-50 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl p-2 mr-2 flex flex-col"
         >
-          <button onClick={() => navigate('/login')}>To Login</button>
-          <button onClick={() => navigate('/song/123')}>To Song</button>
-          <button onClick={() => navigate('/artist/123')}>To Artist</button>
-          <button onClick={() => navigate('/album/123')}>To Album</button>
+          <SideBar />
         </motion.div>
 
         <motion.div variants={outletContainerVariants} className="h-full flex-1 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl p-2">
           <Outlet />
+        </motion.div>
+
+        <motion.div
+          variants={songQueueVariants}
+          className="h-full w-60 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl p-2 ml-2"
+        >
+          <SongQueue />
         </motion.div>
       </div>
     </motion.div >
