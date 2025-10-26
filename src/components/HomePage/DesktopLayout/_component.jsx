@@ -49,25 +49,25 @@ function DesktopLayout() {
       className="w-full h-full flex flex-col p-2 text-[#a5a5a5] overflow-hidden"
       key="home-desktop-layout"
     >
-      <motion.div variants={playerBarVariants} className='p-2 w-full h-20 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl'>
+      <motion.div variants={playerBarVariants} className='w-full h-20 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl'>
         <PlayerBar />
       </motion.div>
 
       <div className="w-full flex-1 flex flex-row mt-2">
         <motion.div
           variants={sideBarVariants}
-          className="h-full w-50 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl p-2 mr-2 flex flex-col"
+          className="h-full w-50 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl flex flex-col"
         >
           <SideBar />
         </motion.div>
 
-        <motion.div variants={outletContainerVariants} className="h-full flex-1 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl p-2">
+        <motion.div variants={outletContainerVariants} className="h-full flex-1 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl ml-2">
           <Outlet />
         </motion.div>
 
         <motion.div
           variants={songQueueVariants}
-          className="h-full w-60 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl p-2 ml-2"
+          className="h-full w-60 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl ml-2"
         >
           <SongQueue />
         </motion.div>
