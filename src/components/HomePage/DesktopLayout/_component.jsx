@@ -12,33 +12,33 @@ const blankVariant = {
   exit: { transition: { when: "afterChildren", staggerChildren: 0.03 } },
 }
 
+const playerBarVariants = {
+  initial: { y: -48, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  exit: { y: -48, opacity: 0, transition: { duration: 0.5 } },
+}
+
+const sideBarVariants = {
+  initial: { x: -48, opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+  exit: { x: -48, opacity: 0, transition: { duration: 0.5 } },
+}
+
+const outletContainerVariants = {
+  initial: { y: 48, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  exit: { y: 48, opacity: 0, transition: { duration: 0.5 } },
+}
+
+const songQueueVariants = {
+  initial: { x: 48, opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+  exit: { x: 48, opacity: 0, transition: { duration: 0.5 } },
+}
+
 function DesktopLayout() {
   const navigate = useNavigate();
   const [isFullscreen, setIsFullscreen] = useState(false);
-
-  let playerBarVariants = {
-    initial: { y: -48, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-    exit: { y: -48, opacity: 0, transition: { duration: 0.5 } },
-  }
-
-  let sideBarVariants = {
-    initial: { x: -48, opacity: 0 },
-    animate: { x: 0, opacity: 1, transition: { duration: 0.5 } },
-    exit: { x: -48, opacity: 0, transition: { duration: 0.5 } },
-  }
-
-  let outletContainerVariants = {
-    initial: { y: 48, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-    exit: { y: 48, opacity: 0, transition: { duration: 0.5 } },
-  }
-
-  let songQueueVariants = {
-    initial: { x: 48, opacity: 0 },
-    animate: { x: 0, opacity: 1, transition: { duration: 0.5 } },
-    exit: { x: 48, opacity: 0, transition: { duration: 0.5 } },
-  }
 
   return (
     <motion.div
