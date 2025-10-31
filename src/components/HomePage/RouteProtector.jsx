@@ -3,7 +3,6 @@ import AdaptiveContainer from "../shared/AdaptiveContainer";
 import { AnimatePresence, motion } from 'motion/react';
 import { useNavigate } from "react-router-dom";
 import authAPI from "../../apis/authAPI";
-import toast from "react-hot-toast";
 
 const loadingScreenVariant = {
   initial: { opacity: 0 },
@@ -20,7 +19,6 @@ function RouteProtector({ children }) {
     try {
       const response = await authAPI.fetchGETVerifySession();
       if (response.result === "Bx000") {
-        toast.success("Session verified successfully!");
         setIsLoading(false);
         return;
       } else {
