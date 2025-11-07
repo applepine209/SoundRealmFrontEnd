@@ -3,7 +3,7 @@
 // Dark: #120300
 
 // Modules imports
-import { createBrowserRouter, RouterProvider, Navigate, useOutlet, useLocation, useMatches } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate, useOutlet, useMatches } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import React from "react";
 

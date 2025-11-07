@@ -17,9 +17,26 @@ function DesktopLayout() {
   const [signal3, setSignal3] = useState(false);
 
   let playerBarVariants = {
-    initial: { y: -48, opacity: 0, height: 83 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.5 }, height: signal2 ? "100%" : 83 },
-    exit: { y: -48, opacity: 0, transition: { duration: 0.5 } },
+    initial: {
+      y: -48,
+      opacity: 0,
+      height: 83
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      },
+      height: signal2 ? "100%" : 83
+    },
+    exit: {
+      y: -48,
+      opacity: 0,
+      transition: {
+        duration: 0.5
+      }
+    },
   }
 
   let sideBarVariants = {
@@ -35,8 +52,8 @@ function DesktopLayout() {
   }
 
   let songQueueVariants = {
-    initial: { x: 48, opacity: 0 },
-    animate: { x: signal1 || signal3 ? 48 : 0, opacity: signal1 || signal3 ? 0 : 1, transition: { duration: 0.5 }, display: signal1 || signal3 ? "none" : "block" },
+    initial: { x: 48, opacity: 0, width: 240, marginLeft: 8 },
+    animate: { x: signal1 || signal3 ? 48 : 0, opacity: signal1 || signal3 ? 0 : 1, transition: { duration: 0.5 }, display: signal1 ? "none" : "block", width: signal3 ? 0 : 240, marginLeft: signal3 ? 0 : 8 },
     exit: { x: 48, opacity: 0, transition: { duration: 0.5 } },
   }
 
@@ -91,7 +108,7 @@ function DesktopLayout() {
 
         <motion.div
           variants={songQueueVariants}
-          className="mt-2 w-60 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl ml-2"
+          className="mt-2 rounded-2xl bg-[#2d2d2d80] backdrop-blur-2xl"
           layout
         >
           <SongQueue />

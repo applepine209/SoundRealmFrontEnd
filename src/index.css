@@ -83,3 +83,11 @@ html, body {
   --font-automate: "Automate", sans-serif;
   --breakpoint-3xl: 121rem;
 }
+
+[data-radix-scroll-area-viewport] > * {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  display: block !important; /* override display: table */
+  box-sizing: border-box !important;
+}
